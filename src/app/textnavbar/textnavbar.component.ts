@@ -12,12 +12,12 @@ export class TextnavbarComponent {
 
   constructor() { 
     this.miMapa = new Map();
-    this.miMapa.set("es", "Tienda DevSchool");
-    this.miMapa.set("en", "Shop DevSchool");
+    this.miMapa.set("es", "Bienvenido a la Tienda de DevSchool");
+    this.miMapa.set("en", "Welcome to DevSchool Shop");
   }
 
   changeLenguaje(): string{
-    if(this.llegadaPadreaHijo != null){
+    if(this.llegadaPadreaHijo){
       return this.miMapa.get(this.llegadaPadreaHijo);
     }else{
       return this.miMapa.get("es");
