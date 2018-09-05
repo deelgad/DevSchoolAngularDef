@@ -1,4 +1,4 @@
-import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
+import { Component,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'dev-navbar',
@@ -14,6 +14,7 @@ export class NavbarComponent{
 
   constructor() { 
     this.salidaHijoaPadre = new EventEmitter<string>();
+    this.languajeSelected ="es";
     this.idiomas=[
       {key:"es",value:"Español"},
       {key:"en",value:"Ingles"}

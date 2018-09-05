@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TextnavbarComponent } from './textnavbar/textnavbar.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { ListitemsComponent } from './listitems/listitems.component'
 
 
 
@@ -12,7 +13,8 @@ import { FormsModule } from '@angular/forms'
   declarations: [
     AppComponent,
     NavbarComponent,
-    TextnavbarComponent
+    TextnavbarComponent,
+    ListitemsComponent
   ],
   imports: [
     BrowserModule,
