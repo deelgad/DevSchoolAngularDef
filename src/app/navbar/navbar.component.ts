@@ -9,11 +9,18 @@ export class NavbarComponent{
 
   @Output() salidaHijoaPadre;
 
+  languajeSelected: string;
+  idiomas: any[];
+
   constructor() { 
     this.salidaHijoaPadre = new EventEmitter<string>();
+    this.idiomas=[
+      {key:"es",value:"Español"},
+      {key:"en",value:"Ingles"}
+    ]
   }
 
-  hijoClick(languajeSelected : string){
-    this.salidaHijoaPadre.emit(languajeSelected);
+  hijoClick(){
+    this.salidaHijoaPadre.emit(this.languajeSelected);
   }
 }

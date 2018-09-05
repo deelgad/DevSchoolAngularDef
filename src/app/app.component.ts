@@ -9,7 +9,7 @@ import { Component,OnInit,OnChanges,OnDestroy } from '@angular/core';
 export class AppComponent {
   idioma: String;
 
-  idiomaSeleccionado(lenguajeSlected: string){
-    this.idioma = lenguajeSlected;
+  idiomaSeleccionado(event: string){
+    this.idioma = event;
   }
 }
