@@ -1,5 +1,13 @@
-<dev-navbar (salidaHijoaPadre) ="idiomaSeleccionado($event)"></dev-navbar>
-<dev-textnavbar [llegadaPadreaHijo]="idioma"></dev-textnavbar>
-<dev-listitems></dev-listitems>
+<dev-navbar 
+    (salidaHijoaPadre) ="idiomaSeleccionado($event)" 
+    (clickaHijoaPadre) ="opcionSeleccionado($event)"></dev-navbar>
+
+<div class="container">
+    <dev-textnavbar *ngIf="opcion==='Welcome'" [llegadaPadreaHijo]="idioma"></dev-textnavbar>
+    <dev-listitems *ngIf="opcion==='Items'" (itemaPadre) ="itemSeleccionado($event)"></dev-listitems>
+    <dev-item *ngIf="opcion==='Item'" [itemPadreaHijo]="item"></dev-item>
+</div>
 
 
+
+ 

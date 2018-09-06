@@ -1,4 +1,26 @@
-<div *ngFor="let item of listaItems">
-  <p>Nombre : {{item.name}}</p>
-  <p>Precio : {{item.price}}</p>
+<div class="titulo">
+  <h1 >Lista de Items</h1>
 </div>
+
+<div class="checkbox">
+  <label><input [(ngModel)]="checkbox" type="checkbox">Solo Disponibles</label>
+</div>
+
+<div class="input">
+  <label for="">Buscar Articulo</label>
+  <input [(ngModel)]="texto" type="text">
+</div>
+
+<div class="limpiar"></div>
+
+<div class="card-group">
+  <div class="card" (click)="itemSeleccionado(item.id)" *ngFor="let item of listaItems | availabreitems:checkbox:texto">
+    <div class="list-group-item list-group-item-action">
+      <b class="card-text">{{ item.name }}</b>
+      <p class="card-text">{{ item.price }}</p>
+    </div>
+  </div>
+</div>
+
+
+

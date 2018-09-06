@@ -5,16 +5,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { TextnavbarComponent } from './textnavbar/textnavbar.component';
 import { FormsModule } from '@angular/forms';
-import { ListitemsComponent } from './listitems/listitems.component'
-
-
+import { ListitemsComponent } from './listitems/listitems.component';
+import { ItemComponent } from './item/item.component';
+import { AvailabreitemsPipe } from './availabreitems.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     TextnavbarComponent,
-    ListitemsComponent
+    ListitemsComponent,
+    ItemComponent,
+    AvailabreitemsPipe
   ],
   imports: [
     BrowserModule,

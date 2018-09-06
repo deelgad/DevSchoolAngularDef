@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter} from '@angular/core';
 
-interface item{
-  name: string;
-  currency: string;
-  price: number;
-  availabre: boolean;
-  descrition: string;
-}
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'dev-listitems',
@@ -15,13 +9,24 @@ interface item{
 })
 export class ListitemsComponent{
 
-  listaItems: any[];
+  @Output() itemaPadre;
+  listaItems: Item[];
+  item: Item;
+  checkbox: boolean;
+  texto: string;
 
   constructor() { 
-    this.listaItems = [{name: "Pelota" ,currency: "eur",price: 12,availabre: true,descrition: "Es una pelota"},
-    {name: "Coche" ,currency: "eur",price: 25, availabre: false,descrition: "Es una coche"},
-    {name: "linterna" ,currency: "lib",price: 5,availabre: true,descrition: "Es una linterna"}];
+    this.itemaPadre = new EventEmitter<Item>();
+
+    this.listaItems = [
+      {id:"1",name: "Pelota" ,currency: "eur",price: 12,availabre: true,descrition: "Es una pelota"},
+      {id:"2",name: "Coche" ,currency: "eur",price: 25, availabre: false,descrition: "Es una coche"},
+      {id:"3",name: "linterna" ,currency: "lib",price: 5,availabre: true,descrition: "Es una linterna"}
+    ];
   }
 
-
+  itemSeleccionado(algo: string){
+    this.item = this.listaItems.find( i => i.id == algo);
+    this.itemaPadre.emit(this.item);
+  }
 }
